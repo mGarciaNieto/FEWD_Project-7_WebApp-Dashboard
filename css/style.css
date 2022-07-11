@@ -1,0 +1,31 @@
+/* General settings */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #efecec;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 5rem;
+}
+
+img{
+  width: 20px;
+}
