@@ -10,7 +10,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-html {
+:root {
   font-size: 62.5%;
 }
 
@@ -145,7 +145,8 @@ html {
 .social,
 .new-members,
 .recent-activity,
-.message {
+.message,
+.settings {
   border-bottom: 1px solid #cccccc;
   padding: 0 5% 4%;
   font-size: 1.5rem;
@@ -220,7 +221,7 @@ html {
 .members-container {
   border-bottom: 1px solid #cccccc;
   padding: 5%;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 
@@ -235,7 +236,8 @@ html {
 
 .members-text,
 .members-container,
-.recent-activity--text {
+.recent-activity--text,
+.widget-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,10 +278,98 @@ html {
 /* Messaging
 ==================================================================== */
 
+.message {
+  padding-bottom: 2%;
+}
 
+.widget-container {
+  padding-top: 5%;
+}
 
-/* hasta aqui lo mio
---------------------------------------------------------------------- */
+.message-form__input,
+.message-form__textarea,
+.message-form__button,
+.form-field,
+.button-primary,
+.button-disabled {
+  width: 100%;
+  margin-bottom: 5%;
+  padding: 5%;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-weight: 300;
+}
+
+.message-form__textarea {
+  height: 150px;
+}
+
+.message-form__button,
+.button-primary,
+.button-disabled {
+  background-color: #7477bf;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.message__results {
+  width: 250px;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 5%;
+  margin-top: -20px;
+  text-align: left;
+}
+
+.message__results-ul {
+  list-style: none;
+}
+
+.message__results-ul li {
+  cursor: pointer;
+}
+
+/* Settings
+===================================================================== */
+
+.checkboxes,
+.settings-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 0;
+}
+
+.settings__switch {
+  width: 90px;
+}
+
+.form-field {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #7477bf 50%), linear-gradient(135deg, #7477bf 50%, transparent 50%), radial-gradient(10px at center, rgba(155, 152, 152, 0.5), transparent 50%);
+
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+.settings-button {
+  margin: 0;
+}
+
+.button-primary,
+.button-disabled {
+  width: 48%;
+}
+
+.button-disabled {
+  background-color: #999999;
+}
 
 /* Grid layout
 ===================================================================== */
@@ -315,6 +405,9 @@ html {
 .widget-container-half {
   width: 95vw;
 }
+
+/* @media 768px for iPad
+===================================================================== */
 
 @media (min-width: 768px) {
   .grid-container {
@@ -354,5 +447,11 @@ html {
   }
 }
 
+/* @media 1024px for iPad Pro and Desktop
+===================================================================== */
+
 @media (min-width: 1024px) {
+  main {
+    width: 100%;
+  }
 }

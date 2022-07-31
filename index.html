@@ -175,7 +175,7 @@
         <div class="members-container recent-activity__container">
           <img class="member__img" src="images/member-1.jpg" alt="profile-image" />
           <div class="recent-activity--text">
-            <p class="recent-activity--top-text">Victoria Chambers commented on <span class="recent-activity__text--bold" >WebApp's SEO Tips</span></p>
+            <p class="recent-activity--top-text">Victoria Chambers commented on <span class="recent-activity__text--bold">WebApp's SEO Tips</span></p>
             <p>4 hours ago</p>
           </div>
           <p class="arrow">></p>
@@ -183,7 +183,7 @@
         <div class="members-container recent-activity__container">
           <img class="member__img" src="images/member-2.jpg" alt="profile-image" />
           <div class="recent-activity--text">
-            <p class="recent-activity--top-text">Dale Byrd liked the post <span class="recent-activity__text--bold" >Facebook's Changes for 2021</span></p>
+            <p class="recent-activity--top-text">Dale Byrd liked the post <span class="recent-activity__text--bold">Facebook's Changes for 2021</span></p>
             <p>5 hours ago</p>
           </div>
           <p class="arrow">></p>
@@ -191,7 +191,7 @@
         <div class="members-container recent-activity__container">
           <img class="member__img" src="images/member-3.jpg" alt="profile-image" />
           <div class="recent-activity--text">
-            <p class="recent-activity--top-text">Dawn Wood commented on <span class="recent-activity__text--bold" >Facebook's Changes for 2021</span></p>
+            <p class="recent-activity--top-text">Dawn Wood commented on <span class="recent-activity__text--bold">Facebook's Changes for 2021</span></p>
             <p>5 hours ago</p>
           </div>
           <p class="arrow">></p>
@@ -199,7 +199,7 @@
         <div class="members-container members-container--last recent-activity__container">
           <img class="member__img" src="images/member-4.jpg" alt="profile-image" />
           <div class="recent-activity--text">
-            <p class="recent-activity--top-text">Dan Oliver posted <span class="recent-activity__text--bold" >WebApp's SEO Tips</span></p>
+            <p class="recent-activity--top-text">Dan Oliver posted <span class="recent-activity__text--bold">WebApp's SEO Tips</span></p>
             <p>1 day ago</p>
           </div>
           <p class="arrow">></p>
@@ -211,9 +211,10 @@
       <section class="message">
         <h3 class="section__h3">Message User</h3>
         <form action="#" class="widget-container">
-          <input type="text" name="" id="userField" placeholder="Search for user" class="form-field" />
-          <textarea name="" id="messageField" cols="30" rows="10"></textarea>
-          <button class="buttton-primary" id="send">Send</button>
+          <input type="text" name="" id="userField" placeholder="Search for User" class="message-form__input" onKeyUp="showResults(this.value)" />
+          <div class="message__results" id="results"></div>
+          <textarea name="" id="messageField" cols="30" rows="10" placeholder="Message for User" class="message-form__textarea"></textarea>
+          <button class="message-form__button" id="send">Send</button>
         </form>
       </section>
 
@@ -223,9 +224,9 @@
 
         <!-- custon CSS toggle code -->
         <div class="checkboxes">
-          <strong> Send Email Notifications </strong>
-          <label class="switch-ios switch-light" onclick="">
-            <input type="checkbox" checked id="email-setting" />
+          <span class="settings__text"> Send Email Notifications </span>
+          <label class="switch-ios switch-light settings__switch" onclick="">
+            <input type="checkbox" checked id="email-setting" class="settings__toggle-switch" />
             <span>
               <span>OFF</span>
               <span>ON</span>
@@ -236,11 +237,9 @@
 
         <!-- custon CSS toggle code -->
         <div class="checkboxes">
-          <label for="">Set profile to public</label>
-
-          <strong> Set Profile to Public </strong>
-          <label class="switch-ios switch-light" onclick="">
-            <input type="checkbox" checked id="profile-setting" />
+          <span class="settings__text"> Set Profile to Public </span>
+          <label class="switch-ios switch-light settings__switch" onclick="">
+            <input type="checkbox" checked id="profile-setting" class="settings__toggle-switch" />
             <span>
               <span>OFF</span>
               <span>ON</span>
@@ -256,6 +255,7 @@
           <option>PDT</option>
           <option>EST</option>
         </select>
+
         <div class="settings-button">
           <button class="button-primary" id="save">Save</button>
           <button class="button-disabled" id="cancel">Cancel</button>

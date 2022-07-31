@@ -8,6 +8,7 @@ const bell = document.getElementById('header__bell')
 const user = document.getElementById('userField')
 const message = document.getElementById('messageField')
 const send = document.getElementById('send')
+const res = document.getElementById('results')
 
 /* Alert Notifications
 =============================================================== */
@@ -45,3 +46,61 @@ bell.addEventListener('click', (e) => {
 
 /* Messaging
 ============================================================== */
+
+send.addEventListener('click', () => {
+  if (user.value === '' && message.value === '') {
+    Swal.fire({
+      title: 'Please fill out user and message fields before sending',
+      icon: 'warning'
+    })
+  } else if (user.value === '') {
+    alert('Please fill out user field before sending')
+    Swal.fire({
+      title: 'Please fill out user field before sending',
+      icon: 'warning'
+    })
+  } else if (message.value === '') {
+    Swal.fire({
+      title: 'Please fill out message field before sending',
+      icon: 'warning'
+    })
+  } else {
+    Swal.fire({
+      title: `Message successfully sent to: ${user.value}`,
+      icon: 'success'
+    })
+  }
+})
+
+// Autocomplete
+
+const searchItems = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver']
+
+function autocompleteMatch(input) {
+  if (input === '') {
+    return []
+  }
+  const regEx = new RegExp(input)
+  return searchItems.filter(function (term) {
+    if (term.match(regEx)) {
+      return term
+    }
+  })
+}
+
+function showResults(val) {
+  res.innerHTML = ''
+  let list = ''
+  const terms = autocompleteMatch(val)
+  for (i = 0; i < terms.length; i++) {
+    list += '<li>' + terms[i] + '</li>'
+  }
+  res.innerHTML = '<ul class="message__results-ul">' + list + '</ul>'
+}
+
+results.addEventListener('click', (e) => {
+  if (e.target && e.target.nodeName === 'LI') {
+    user.value = e.target.innerHTML
+  }
+  res.innerHTML = ''
+})
