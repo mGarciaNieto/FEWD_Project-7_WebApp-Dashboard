@@ -8,6 +8,9 @@ const bell = document.getElementById('header__bell')
 
 // Charts
 const trafficCanvas = document.getElementById('traffic-chart')
+const trafficSelected = document.querySelector('.traffic-nav')
+const dailyCanvas = document.getElementById('daily-chart')
+const mobileCanvas = document.getElementById('mobile-chart')
 
 // Messaging
 const user = document.getElementById('userField')
@@ -59,7 +62,41 @@ bell.addEventListener('click', (e) => {
 /* Chart Widgets
 =============================================================== */
 
-const trafficData = {
+// Web traffic
+const monthlyWebTraffic = {
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  datasets: [
+    {
+      data: [750, 1250, 1000, 2000, 1500, 1750, 15250, 11850, 2250, 1500, 2500, 8000],
+      backgroundColor: 'rgba(116, 119, 191, .3)',
+      borderWidth: 1
+    }
+  ]
+}
+
+const weeklyWebTraffic = {
+  labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7'],
+  datasets: [
+    {
+      data: [1250, 1900, 1950, 800, 1200, 2500, 2000],
+      backgroundColor: 'rgba(116, 119, 191, .3)',
+      borderWidth: 1
+    }
+  ]
+}
+
+const dailyWebTraffic = {
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  datasets: [
+    {
+      data: [500, 550, 700, 1600, 1100, 1500, 1100],
+      backgroundColor: 'rgba(116, 119, 191, .3)',
+      borderWidth: 1
+    }
+  ]
+}
+
+const hourlyWebTraffic = {
   labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
   datasets: [
     {
@@ -88,6 +125,101 @@ const trafficOptions = {
     }
   }
 }
+
+const trafficChart = new Chart(trafficCanvas, {
+  type: 'line',
+  data: hourlyWebTraffic,
+  options: trafficOptions
+})
+
+trafficSelected.addEventListener('click', (e) => {
+  if (e.target.tagName === 'LI' && !e.target.classList.contains('active')) {
+    const options = trafficSelected.children
+    for (let i = 0; i < options.length; i++) {
+      let option = options[i]
+      if (option.classList.contains('active')) {
+        option.classList.remove('active')
+      }
+    }
+    e.target.classList.add('active')
+  }
+  if (e.target.textContent === 'Hourly') {
+    trafficChart.data = hourlyWebTraffic
+    trafficChart.update()
+  } else if (e.target.textContent === 'Daily') {
+    trafficChart.data = dailyWebTraffic
+    trafficChart.update()
+  } else if (e.target.textContent === 'Weekly') {
+    trafficChart.data = weeklyWebTraffic
+    trafficChart.update()
+  } else if (e.target.textContent === 'Monthly') {
+    trafficChart.data = monthlyWebTraffic
+    trafficChart.update()
+  }
+})
+
+// Daily traffic
+const dailyData = {
+  labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  datasets: [
+    {
+      label: '# of Hits',
+      data: [75, 115, 175, 125, 225, 200, 100],
+      backgroundColor: '#7477BF',
+      borderWidth: 1
+    }
+  ]
+}
+const dailyOptions = {
+  scales: {
+    y: {
+      beginAtZero: true
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
+}
+
+const dailyChart = new Chart(dailyCanvas, {
+  type: 'bar',
+  data: dailyData,
+  options: dailyOptions
+})
+
+// Mobile traffic
+const mobileData = {
+  labels: ['Desktop', 'Tablet', 'Phones'],
+  datasets: [
+    {
+      label: '# of Users',
+      data: [2000, 550, 500],
+      borderWidth: 0,
+      backgroundColor: ['#7477BF', '#78CF82', '#51B6C8']
+    }
+  ]
+}
+
+const mobileOptions = {
+  aspectRatio: 1.9,
+  plugins: {
+    legend: {
+      position: 'right',
+      labels: {
+        boxWidth: 20,
+        fontStyle: 'bold'
+      }
+    }
+  }
+}
+
+const mobileChart = new Chart(mobileCanvas, {
+  type: 'doughnut',
+  data: mobileData,
+  options: mobileOptions
+})
 
 /* Messaging
 ============================================================== */

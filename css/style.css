@@ -168,10 +168,30 @@
 .traffic-nav {
   display: flex;
   justify-content: space-around;
+  font-weight: 400;
+  padding: 2% 0;
 }
 
 .traffic-nav-link {
   list-style: none;
+  width: 80px;
+  padding: 2%;
+  text-align: center;
+}
+
+.active {
+  background-color: #81c98f;
+  border-radius: 20px 20px;
+  color: white;
+}
+
+.widget-container-full,
+.widget-container-half {
+  padding: 5%;
+}
+
+.widget-container-half {
+  margin-top: 5%;
 }
 
 /* Social Stats
