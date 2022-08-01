@@ -1,14 +1,26 @@
 /* DOM References
 ================================================================ */
 
+// Alert Notifications
 const alertBanner = document.querySelector('.alert')
 const bellDot = document.getElementById('notifications')
 const bell = document.getElementById('header__bell')
 
+// Charts
+const trafficCanvas = document.getElementById('traffic-chart')
+
+// Messaging
 const user = document.getElementById('userField')
 const message = document.getElementById('messageField')
 const send = document.getElementById('send')
 const res = document.getElementById('results')
+
+// Settings
+const save = document.getElementById('save')
+const cancel = document.getElementById('cancel')
+const zone = document.getElementById('timezone')
+const notifications = document.getElementById('email-setting')
+const profile = document.getElementById('profile-setting')
 
 /* Alert Notifications
 =============================================================== */
@@ -43,6 +55,39 @@ bell.addEventListener('click', (e) => {
 
   bellDot.classList.add('header__bell-notifications--hidden')
 })
+
+/* Chart Widgets
+=============================================================== */
+
+const trafficData = {
+  labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+  datasets: [
+    {
+      data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+      backgroundColor: 'rgba(116, 119, 191, .3)',
+      borderWidth: 1
+    }
+  ]
+}
+
+const trafficOptions = {
+  backgroundColor: 'rgba(112, 104, 201, .5)',
+  fill: true,
+  aspectRatio: 2.5,
+  animation: {
+    duration: 0
+  },
+  scales: {
+    y: {
+      beginAtZero: true
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
+}
 
 /* Messaging
 ============================================================== */
@@ -104,3 +149,36 @@ results.addEventListener('click', (e) => {
   }
   res.innerHTML = ''
 })
+
+/* Settings
+======================================================================== */
+
+// localStorage
+save.addEventListener('click', () => {
+  localStorage.setItem('email-setting', notifications.checked)
+  localStorage.setItem('profile-setting', profile.checked)
+  localStorage.setItem('timezone', zone.value)
+  Swal.fire({
+    title: 'Your settings have been successfully saved!',
+    icon: 'success'
+  })
+})
+
+cancel.addEventListener('click', () => {
+  localStorage.clear()
+  loadSettings()
+  zone.selectedIndex = 0
+  localStorage.setItem('timezone', zone.value)
+  Swal.fire({
+    title: 'Your settings have gone back to default values!',
+    icon: 'warning'
+  })
+})
+
+function loadSettings() {
+  notifications.checked = JSON.parse(localStorage.getItem('email-setting'))
+  profile.checked = JSON.parse(localStorage.getItem('profile-setting'))
+  zone.value = localStorage.getItem('timezone')
+}
+
+loadSettings()

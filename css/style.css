@@ -107,6 +107,9 @@
   background-color: #f7f7f7;
 }
 
+/* Alert Notifications
+================================================================== */
+
 .alert {
   background-color: #7477bf;
   margin: 5%;
@@ -138,6 +141,9 @@
   opacity: 0;
   transition: opacity 2s linear;
 }
+
+/* Chart Widget
+=============================================================================== */
 
 .traffic,
 .daily,
@@ -374,9 +380,9 @@
 /* Grid layout
 ===================================================================== */
 
-.temporary {
+/* .temporary {
   width: 300px;
-}
+} */
 
 .grid-container {
   display: grid;
