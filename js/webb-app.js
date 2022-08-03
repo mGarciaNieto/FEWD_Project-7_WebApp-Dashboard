@@ -224,7 +224,8 @@ const mobileChart = new Chart(mobileCanvas, {
 /* Messaging
 ============================================================== */
 
-send.addEventListener('click', () => {
+send.addEventListener('click', (e) => {
+  e.preventDefault()
   if (user.value === '' && message.value === '') {
     Swal.fire({
       title: 'Please fill out user and message fields before sending',

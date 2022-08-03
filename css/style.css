@@ -161,6 +161,10 @@
   font-weight: 300;
 }
 
+.section {
+  width: 100%;
+}
+
 .section__h3 {
   font-weight: 400;
   text-transform: uppercase;
@@ -176,8 +180,8 @@
 
 .traffic-nav-link {
   list-style: none;
-  width: 80px;
-  padding: 2%;
+  width: 70px;
+  padding: 2% 1%;
   text-align: center;
 }
 
@@ -493,6 +497,7 @@
   .traffic-nav {
     padding-right: 2%;
     padding-bottom: 0;
+    margin-right: 20px;
   }
 
   .daily {
@@ -686,6 +691,7 @@
 
   /* Chart-widget
   ---------------------------------------------------------------- */
+
   /* Social
   ---------------------------------------------------------------- */
 
