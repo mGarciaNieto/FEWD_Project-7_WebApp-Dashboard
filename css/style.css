@@ -27,6 +27,7 @@
   text-align: left;
   font-size: 2.5rem;
   font-weight: 700;
+  margin-right: 2%;
 }
 
 .h1-app {
@@ -75,6 +76,7 @@
 
 .header__h3 {
   font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .navigation-content {
@@ -207,6 +209,7 @@
   color: #7477bf;
   font-weight: 400;
   /* font-size: 2.5rem; */
+  border-radius: 10px;
 }
 
 .social-image {
@@ -360,6 +363,10 @@
 /* Settings
 ===================================================================== */
 
+.settings {
+  border-bottom: none;
+}
+
 .checkboxes,
 .settings-button {
   display: flex;
@@ -432,10 +439,188 @@
   width: 95vw;
 }
 
-/* @media 768px for iPad
+/* ==================================================================
+  @media 768px for iPad
 ===================================================================== */
 
 @media (min-width: 768px) {
+  .h1 {
+    margin-right: 40%;
+  }
+
+  .header__img {
+    width: 50px;
+  }
+
+  .navigation-content {
+    display: block;
+    text-align: center;
+  }
+
+  .nav__img {
+    margin: 25% 0;
+    padding: 4% 0;
+  }
+
+  .nav__img--first {
+    margin-top: 50%;
+  }
+
+  .headline {
+    flex-basis: 20%;
+    padding: 2%;
+    padding-left: 5%;
+  }
+
+  .tab {
+    flex-basis: 80%;
+  }
+
+  /* Chart-widget
+  ---------------------------------------------------------------- */
+
+  .traffic {
+    padding-bottom: 0;
+  }
+
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* align-content: center; */
+  }
+
+  .traffic-nav {
+    padding-right: 2%;
+    padding-bottom: 0;
+  }
+
+  .daily {
+    border-right: 1px solid #cccccc;
+  }
+
+  .daily,
+  .mobile {
+    padding: 0 10% 4%;
+  }
+
+  .widget-container-half {
+    padding: 0 15% 0 0;
+  }
+
+  /* Social
+  ---------------------------------------------------------------- */
+  .social {
+    padding-bottom: 2%;
+  }
+
+  .social-items-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-container {
+    border-radius: 5px;
+    margin: 2% 1% 1% 0;
+    padding: 1% 2.5%;
+    align-items: center;
+  }
+
+  .social-icon {
+    width: 30px;
+    margin-bottom: -20%;
+  }
+
+  .social-text {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+  }
+
+  .social-text--name {
+    margin-bottom: -10%;
+  }
+
+  .social-text--digits {
+    font-size: 3.5rem;
+  }
+
+  /* New-members
+  ---------------------------------------------------------------- */
+
+  .members-container {
+    padding: 2% 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .members-text {
+    width: 40%;
+    align-items: flex-start;
+    margin-right: 200px;
+  }
+
+  .members-container--last {
+    padding-bottom: 0;
+  }
+
+  /* Recent-activity
+  ---------------------------------------------------------------- */
+  .recent-activity {
+    padding-bottom: 2%;
+  }
+
+  .recent-activity__container {
+    padding: 2% 0;
+  }
+
+  .recent-activity--text {
+    width: 90%;
+    display: flext;
+    align-items: flex-start;
+    margin-left: 4%;
+  }
+
+  .arrow {
+    visibility: visible;
+    font-size: 3rem;
+    font-weight: 100;
+  }
+
+  /* Message
+  ---------------------------------------------------------------- */
+
+  .message-form__input {
+    margin-bottom: 0;
+  }
+
+  .message-form__button,
+  .button-disabled,
+  .button-primary,
+  .form-field {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  /* Settings
+  ---------------------------------------------------------------- */
+
+  .settings {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .checkboxes {
+    justify-content: flex-start;
+  }
+
+  .settings__text {
+    width: 25%;
+    margin-right: 5%;
+  }
+
+  /* Grid layout
+  ---------------------------------------------------------------- */
+
   .grid-container {
     grid-template-columns: 55px 1fr;
     grid-template-areas:
@@ -447,20 +632,22 @@
     grid-template-columns: 50%;
   }
 
+  .main-header,
+  .alert,
   .traffic,
-  .social {
+  .social,
+  .new-members,
+  .recent-activity,
+  .message,
+  .settings {
     grid-column: 1 / span 2;
   }
 
-  .daily,
-  .members,
-  .message {
+  .daily {
     grid-column: 1 / span 1;
   }
 
-  .mobile,
-  .activitgy,
-  .settings {
+  .mobile {
     grid-column: 2 / span 1;
   }
 
@@ -473,11 +660,99 @@
   }
 }
 
-/* @media 1024px for iPad Pro and Desktop
+/* ==================================================================
+  @media 1024px for iPad Pro and Desktop
 ===================================================================== */
 
 @media (min-width: 1024px) {
-  main {
-    width: 100%;
+  .headline {
+    flex-basis: 10%;
+    padding: 1%;
+    padding-left: 2.5%;
+    padding-right: 2%;
+  }
+
+  .tab {
+    flex-basis: 90%;
+  }
+
+  /* Alert
+  ------------------------------------------------------------------ */
+
+  .alert {
+    margin: 2.5%;
+    padding: 1% 2%;
+  }
+
+  /* Chart-widget
+  ---------------------------------------------------------------- */
+  /* Social
+  ---------------------------------------------------------------- */
+
+  .social {
+    padding: 2.5%;
+  }
+
+  .social-icon {
+    width: 25px;
+    margin-bottom: -25%;
+  }
+
+  .social-text {
+    font-size: 1.5rem;
+    margin-right: 9rem;
+  }
+
+  /* New-members
+  ---------------------------------------------------------------- */
+  .new-members,
+  .message {
+    border-right: 1px solid #cccccc;
+  }
+
+  .members-text {
+    width: 40%;
+    align-items: flex-start;
+    margin-right: 100px;
+  }
+
+  /* Recent-activity
+  ---------------------------------------------------------------- */
+
+  .recent-activity--top-text {
+    text-align: left;
+  }
+
+  /* Message
+  ---------------------------------------------------------------- */
+
+  /* Settings
+  ---------------------------------------------------------------- */
+
+  .checkboxes--bottom {
+    margin-top: 10%;
+    margin-bottom: 18%;
+  }
+
+  .settings__text {
+    width: 40%;
+  }
+
+  .form-field {
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  /* Grid layout
+  ---------------------------------------------------------------- */
+
+  .new-members,
+  .message {
+    grid-column: 1 / span 1;
+  }
+
+  .recent-activity,
+  .settings {
+    grid-column: 2 / span 1;
   }
 }
