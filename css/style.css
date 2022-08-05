@@ -509,6 +509,9 @@
     padding: 0 10% 4%;
   }
 
+  .widget-container-full{
+    padding: 0 70px 0 0px;
+  }
   .widget-container-half {
     padding: 0 15% 0 0;
   }
@@ -657,11 +660,11 @@
   }
 
   .widget-container-full {
-    width: 90vw;
+    width: 85vw;
   }
 
   .widget-container-half {
-    width: 45vw;
+    width: 35vw;
   }
 }
 
