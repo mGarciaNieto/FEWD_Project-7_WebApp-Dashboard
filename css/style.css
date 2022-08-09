@@ -183,6 +183,7 @@
   width: 70px;
   padding: 2% 1%;
   text-align: center;
+  cursor: pointer;
 }
 
 .active {
@@ -344,6 +345,7 @@
   background-color: #7477bf;
   color: #fff;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .message__results {
@@ -509,9 +511,10 @@
     padding: 0 10% 4%;
   }
 
-  .widget-container-full{
+  .widget-container-full {
     padding: 2% 70px 5% 0px;
   }
+
   .widget-container-half {
     padding: 0 15% 0 0;
   }
@@ -695,16 +698,19 @@
   /* Chart-widget
   ---------------------------------------------------------------- */
 
-.traffic{
-  padding-left: 2%;
-}
-.daily,.mobile{
-  padding-left: 5%;
-}
+  .traffic {
+    padding-left: 2%;
+  }
 
-.widget-container-full,.widget-container-half{
-  padding-left: 5%;
-}
+  .daily,
+  .mobile {
+    padding-left: 5%;
+  }
+
+  .widget-container-full,
+  .widget-container-half {
+    padding-left: 5%;
+  }
 
   /* Social
   ---------------------------------------------------------------- */
