@@ -695,6 +695,17 @@
   /* Chart-widget
   ---------------------------------------------------------------- */
 
+.traffic{
+  padding-left: 2%;
+}
+.daily,.mobile{
+  padding-left: 5%;
+}
+
+.widget-container-full,.widget-container-half{
+  padding-left: 5%;
+}
+
   /* Social
   ---------------------------------------------------------------- */
 
